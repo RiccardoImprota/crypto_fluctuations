@@ -219,6 +219,20 @@ class UsersSQL():
                                     WHERE chat_id = '{chat_id}' """)
         self.cnxn.commit()
 
+    def bandaid(self,moneta):
+        
+        deleted=False
+        while deleted==False:
+            try:
+                self.cursor.execute(f"""UPDATE dbo.users
+                SET [latest_update_{moneta}] = NULL;""")
+                deleted=True
+            except:
+                time.sleep(1)
+                continue             
+        
+        self.cnxn.commit()
+
 
 
 
