@@ -191,6 +191,6 @@ if __name__ == "__main__":
     mqttsubber.listenscrapers(timescraping=15,verbose=True,save=True)
     mqttsubber.sqlinserter()
     mqttsubber.db.update_time_window()
-    mqttsubber.update_latest_prices()
+    #mqttsubber.update_latest_prices()
     
 
